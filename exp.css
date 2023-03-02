@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+video{
+    height: 100vh;
+}
+button{
+    position: fixed;
+    height: 50px;
+    top:10px;
+    left: 10px;
+    z-index:999;
+}
+.instructionsblock{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.instructions{
+    position: fixed;
+    margin: 0 auto;
+    top: 200px;
+    display: flex;
+    height: 900px;
+    justify-content: center;
+}
+
+.touche{
+    height: 300px;
+    width: 300px;
+    transition: 0.5s;
+}
+
+.inactive{
+    opacity: 0.5;
+    transition: 0.5s;
+    animation-name: unpress;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.active{
+    opacity: 1;
+    animation-name: press;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes press {
+    0%{
+    }
+   
+    100%{
+        scale: 0.7;
+    }
+}
+
+@keyframes unpress {
+    0%{
+        scale: 0.7;
+    }
+   
+    100%{
+        scale:1;
+    }
+}
+@keyframes random {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    20%{opacity: 0;}
+   30%{opacity: 1;}
+   70%{opacity: 1;}
+   80%{opacity: 0;}
+    100%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+}
+@keyframes random2 {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    20%{opacity: 0;}
+   30%{opacity: 1;}
+   70%{opacity: 1;}
+   80%{opacity: 0;}
+    100%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+.icon{
+    height: 50px;
+    width: 150px;
+    display: flex;
+    justify-content: center; 
+    overflow: hidden;   
+}
+
+.icon img{
+    width: 50px;
+}
+
+.toucheson, .toucherand, .touchevid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.random{
+    animation-name: random;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: 1s;
+}
+.random2{
+    animation-name: random2;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: 1s;
+}
+.offseticon{
+    transform: translateX(-100px);
+    transition: 1s;
+    opacity: 0;
+}
+.offseticon2{
+    transform: translateX(100px);
+    transition: 1s;
+    opacity: 0;
+}
